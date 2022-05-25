@@ -69,8 +69,8 @@ const Navbar = ({ children }) => {
             
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
-          <img src={logo} alt="" />
+        <Link to="/" className={darkMood?'':'text-black'}>
+          <img className="m-0 p-0" src={logo} alt="" />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">

@@ -6,7 +6,6 @@
   * {
     box-sizing: border-box;
   }
-  
   .review {
     font-family: 'Noto Sans JP', sans-serif;
    /*  background-color: #fef8f8; */
@@ -14,7 +13,7 @@
   
   .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin: 4rem 5vw;
     padding: 0;

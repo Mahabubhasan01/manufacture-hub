@@ -4,10 +4,11 @@ import './ReviewCard.css'
 
 const ReviewCard = () => {
   return (
-    <div className="review">
+    <div className="review md:my-52">
+      <h1 className="font-bold text-4xl text-center">Review Satisfaction</h1>
       <ul class="cards">
         <li>
-          <Link to='/' href="" class="card">
+          <Link to='/'  class="card">
             <img
               src="https://i.imgur.com/oYiTqum.jpg"
               class="card__image"
@@ -36,7 +37,7 @@ const ReviewCard = () => {
           </Link>
         </li>
         <li>
-          <Link to='/' href="" class="card">
+          <Link to='/'  class="card">
             <img
               src="https://i.imgur.com/2DhmtJ4.jpg"
               class="card__image"

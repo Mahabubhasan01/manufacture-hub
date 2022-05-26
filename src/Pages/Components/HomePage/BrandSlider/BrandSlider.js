@@ -14,14 +14,9 @@ const BrandSlider = () => {
     cssEase: "linear",
   };
   return (
-    <div className='my-20'>
-      <h3 className="text-center text-primary text-2xl">Our trusted  Brand here are</h3>
+    <div className='md:my-48'>
+      <h3 className="text-center text-primary text-4xl font-bold md:my-10">Our trusted  Brand here are</h3>
       <Slider {...settings}>
-       {/*  <div className="w-52 h-40">
-          
-            <img src="https://i.ibb.co/8mvWh57/ide-logo-T1.webp" alt="" />
-          
-        </div> */}
         
         <div className="">
           <img className='' src=" https://i.ibb.co/mt4T5Z5/Advics.webp" alt="" />

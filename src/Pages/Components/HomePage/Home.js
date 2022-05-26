@@ -6,6 +6,7 @@ import Business from './BusinessInfo/Business';
 import './Home.css'
 import Navbar from './Navbar/Navbar';
 import Parts from './Parts/Parts';
+import Review from './Review/Review';
 import TotalItems from './Totalitems/TotalItems';
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
             <TotalItems/>
             <BrandSlider/>
             <Business/>
+            <Review/>
         </div>
     );
 };

@@ -1,12 +1,12 @@
 import React from 'react';
 
-const OilItems = ({item}) => {
+const TyerItems = ({item}) => {
     const {name,img,price,quantity,minimum,info}=item
     return (
         <div>
             <div class="card w-96 bg-base-100 shadow-xl">
         <figure className='bg-red-400'>
-          <img  className='h-52 ' src={img} alt="Shoes" />
+          <img className='h-52' src={img} alt="Shoes" />
         </figure>
         <div class="card-body">
           <h2 class="card-title">{name}</h2>
@@ -23,4 +23,4 @@ const OilItems = ({item}) => {
     );
 };
 
-export default OilItems;
+export default TyerItems;

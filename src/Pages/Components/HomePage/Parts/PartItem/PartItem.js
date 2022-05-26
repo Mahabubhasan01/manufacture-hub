@@ -5,7 +5,7 @@ const PartItem = ({ part }) => {
   return (
     <div>
       <div class="card w-96 bg-base-100 shadow-xl">
-        <figure>
+        <figure className="bg-secondary">
           <img className='h-52' src={img} alt="Shoes" />
         </figure>
         <div class="card-body">

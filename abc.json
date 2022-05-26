@@ -1,50 +1,79 @@
 [
-    {
-        "name":"Mazda Renesis Rotary",
-        "img":"https://i.ibb.co/Qdw0kj1/images3.jpg",
-        "price":"3543",
+
+{
+        "name":"Castrol GTX Motor Oil",
+        "img":"https://i.ibb.co/CWPY1Bv/coolant2lred.webp",
+        "price":"353",
         "minimum":"199",
         "quantity":"34434",
         "info":"The Mazda RX-8 is powered by a 1.3L RENESIS two-rotor rotary engine that makes 212 horsepower at 7,500 rpm and 159 pound-feet of torque at 5,500 rpm."
     },
     {
-        "name":"Horn",
-        "img":"https://i.ibb.co/wrd5sBz/4-car-horn.webp",
+        "name":"Castrol GTX Motor Oil",
+        "img":"https://i.ibb.co/qyj1vXj/DENSO-PLATINUM-5-W-40-SYNTHETIC.webp",
         "price":"143",
         "minimum":"155",
         "quantity":"2124",
         "info":"*Material Type: ABS+Iron+Copper * Features: Snail Car Horn * Height: 5cm*Item Weight: 520g *Voltage: 12V *Tone  Frequency: 500Hz+-20H - 410Hz+-20HZ* Sound: 115db"
     },
     {
-        "name":"Tools",
-        "img":"https://i.ibb.co/RcxZ4bK/Tools.webp",
-        "price":"843",
+        "name":"Protection Motor Oil",
+        "img":"https://i.ibb.co/4TpQmBD/DENSO-PLATINUM-10-W-30-SYNTHETIC-4-L.webp",
+        "price":"343",
         "minimum":"789",
         "quantity":"5678",
         "info":"Socket Set. Every car's tool kit should include a good, fully stocked socket set Pliers and Wire Cutters Wrench Set Screwdrivers Torque Wrench Breaker Bar Impact"
     },
     {
-        "name":"Flamingo",
-        "img":"https://i.ibb.co/7Yqwq2V/coolant2lred.webp",
+        "name":"Durability Motor Oil",
+        "img":"https://i.ibb.co/myVZjRn/DENSO-PLATINUM-10-W-40-SYNTHETIC-675b09ce-d47e-4c25-b778-c4252daa432d.webp",
         "price":"354",
         "minimum":"6785",
         "quantity":"344534",
         "info":"Remove all kinds of colloid, carbon deposit and other sediment in the engine effectively, guarantee good lubrication, restore and improve automotive power"
     },
     {
-        "name":"Coolplay GTR- Gray",
-        "img":"https://i.ibb.co/JxfNjwr/10-car-body-part.webp",
+        "name":"AmazonBasics Motor Oil",
+        "img":"https://i.ibb.co/vQb0ct1/Liqui-Moly-Coolant-Ready-Mix-RAF12-RED1-L.webp",
         "price":"763",
         "minimum":"785",
         "quantity":"6785",
-        "info":"Item Name:RC Body Shell Material: Painted PVC Car shell size: 455 * 200 mm Package Included:1 X RC Body Shell"
+        "info":"It is actually made by Warren Distribution, not Warren Oil. The two companies are very confusing because they have such  suppliers of house branded motor oils."
     },
+   
+
+
+
     {
-        "name":"MRF ZLX",
-        "img":"https://i.ibb.co/kQj9YtX/7-Tyre.webp",
+        "name":"Havoline Motor Oil",
+        "img":" https://i.ibb.co/D9jwzW5/Liqui-Moly-Special-Tec-AA0-W-20-Syntech.webp",
         "price":"343",
         "minimum":"343",
         "quantity":"54434",
-        "info":"MRF ZLX is a tubeless type tyre available in 12,13, 14, and 15 inches size range. There are 14 sizes available with variety of sidewalls and widths."
+        "info":"Havoline® Motor Oil. 10W-30, 10W-40, 20W-50, 30. A premium conventional motor oil with Deposit Shield® Technology, this product is designed to protect deposits"
+    },
+    {
+        "name":"Pennzoil Motor Oil",
+        "img":"https://i.ibb.co/9vG7Cmp/prdt-1-1c74a142-f3db-4b97-8cd0-60ac22c967bb.webp",
+        "price":"354",
+        "minimum":"6785",
+        "quantity":"344534",
+        "info":"Pennzoil Synthetic motor oils are technologically advanced products formulated to withstand severe conditions and keep engines running clean."
+    },
+    {
+        "name":"Lucas Oil Hot Rod ",
+        "img":"https://i.ibb.co/tLSBgzL/prdt-1-f3947966-29ce-473e-82c7-8e6434bc375e.webp",
+        "price":"763",
+        "minimum":"785",
+        "quantity":"6785",
+        "info":"Castrol Classic Oils are specially formulated in the style of the original products. Using traditional mineral oil and a low detergent formulation."
+    },
+    {
+        "name":"Classic Motor Oil",
+        "img":"https://i.ibb.co/zbJkWVZ/RAF11green.webp",
+        "price":"343",
+        "minimum":"343",
+        "quantity":"54434",
+        "info":"Lucas Heavy Duty Oil Stabilizer can be used 80% to 100% to correct conditions in gear boxes that are badly worn, leaking, overheating, or operating extreme pressure."
     }
 ]

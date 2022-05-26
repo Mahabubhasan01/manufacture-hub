@@ -1,0 +1,76 @@
+[
+    
+    {
+        "name":"Audi Turbocharged",
+        "img":"https://i.ibb.co/0DhcLyM/images.jpg",
+        "price":"3543",
+        "minimum":"199",
+        "quantity":"34434",
+        "info":"The Mazda RX-8 is powered by a 1.3L RENESIS two-rotor rotary engine that makes 212 horsepower at 7,500 rpm and 159 pound-feet of torque at 5,500 rpm."
+    },
+    {
+        "name":"Liter Inline-Five",
+        "img":"https://i.ibb.co/sKL0pq9/images1.jpg",
+        "price":"1433",
+        "minimum":"155",
+        "quantity":"2124",
+        "info":"*Material Type: ABS+Iron+Copper * Features: Snail Car Horn * Height: 5cm*Item Weight: 520g *Voltage: 12V *Tone  Frequency: 500Hz+-20H - 410Hz+-20HZ* Sound: 115db"
+    },
+    {
+        "name":"BMW Twin-Turbo",
+        "img":"https://i.ibb.co/zxhTVGS/images2.jpg",
+        "price":"4843",
+        "minimum":"789",
+        "quantity":"5678",
+        "info":"Socket Set. Every car's tool kit should include a good, fully stocked socket set Pliers and Wire Cutters Wrench Set Screwdrivers Torque Wrench Breaker Bar Impact"
+    },
+    {
+        "name":"Ferrari Twin-Turbocharged",
+        "img":"https://i.ibb.co/cy8Gw1J/images3.jpg",
+        "price":"3754",
+        "minimum":"6785",
+        "quantity":"344534",
+        "info":"Remove all kinds of colloid, carbon deposit and other sediment in the engine effectively, guarantee good lubrication, restore and improve automotive power"
+    },
+    {
+        "name":"Dodge Supercharged",
+        "img":"https://i.ibb.co/yFnf3hj/images4.jpg",
+        "price":"7632",
+        "minimum":"785",
+        "quantity":"6785",
+        "info":"Item Name:RC Body Shell Material: Painted PVC Car shell size: 455 * 200 mm Package Included:1 X RC Body Shell"
+    },
+
+    {
+        "name":"Chevrolet",
+        "img":"https://i.ibb.co/JqSWFLB/index.jpg",
+        "price":"3843",
+        "minimum":"343",
+        "quantity":"54434",
+        "info":"MRF ZLX is a tubeless type tyre available in 12,13, 14, and 15 inches size range. There are 14 sizes available with variety of sidewalls and widths."
+    },
+    {
+        "name":"Volkswagen Auto ",
+        "img":"https://i.ibb.co/MnwLHJM/index4.jpg",
+        "price":"3534",
+        "minimum":"6785",
+        "quantity":"344534",
+        "info":"Remove all kinds of colloid, carbon deposit and other sediment in the engine effectively, guarantee good lubrication, restore and improve automotive power"
+    },
+    {
+        "name":"Group Twin-Turbo",
+        "img":"https://i.ibb.co/612Pw94/index5.jpg",
+        "price":"7673",
+        "minimum":"785",
+        "quantity":"6785",
+        "info":"Item Name:RC Body Shell Material: Painted PVC Car shell size: 455 * 200 mm Package Included:1 X RC Body Shell"
+    },
+    {
+        "name":"Ford High Output",
+        "img":"https://i.ibb.co/WkNBQJS/index6.jpg",
+        "price":"3433",
+        "minimum":"343",
+        "quantity":"54434",
+        "info":"MRF ZLX is a tubeless type tyre available in 12,13, 14, and 15 inches size range. There are 14 sizes available with variety of sidewalls and widths."
+    }
+]

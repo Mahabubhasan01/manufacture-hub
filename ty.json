@@ -1,0 +1,84 @@
+[
+    
+    
+    
+
+    {
+        "name":"Bridgestone",
+        "img":"https://i.ibb.co/0DhcLyM/images.jpg",
+        "price":"3543",
+        "minimum":"199",
+        "quantity":"34434",
+        "info":"The Mazda RX-8 is powered by a 1.3L RENESIS two-rotor rotary engine that makes 212 horsepower at 7,500 rpm and 159 pound-feet of torque at 5,500 rpm."
+    },
+    {
+        "name":"Michelin.",
+        "img":"https://i.ibb.co/sKL0pq9/images1.jpg",
+        "price":"143",
+        "minimum":"155",
+        "quantity":"2124",
+        "info":"*Material Type: ABS+Iron+Copper * Features: Snail Car Horn * Height: 5cm*Item Weight: 520g *Voltage: 12V *Tone  Frequency: 500Hz+-20H - 410Hz+-20HZ* Sound: 115db"
+    },
+    {
+        "name":"Goodyear",
+        "img":"https://i.ibb.co/zxhTVGS/images2.jpg",
+        "price":"843",
+        "minimum":"789",
+        "quantity":"5678",
+        "info":"Socket Set. Every car's tool kit should include a good, fully stocked socket set Pliers and Wire Cutters Wrench Set Screwdrivers Torque Wrench Breaker Bar Impact"
+    },
+    {
+        "name":"Pirelli",
+        "img":"https://i.ibb.co/cy8Gw1J/images3.jpg",
+        "price":"354",
+        "minimum":"6785",
+        "quantity":"344534",
+        "info":"Remove all kinds of colloid, carbon deposit and other sediment in the engine effectively, guarantee good lubrication, restore and improve automotive power"
+    },
+    {
+        "name":"Apollo tyres",
+        "img":"https://i.ibb.co/yFnf3hj/images4.jpg",
+        "price":"763",
+        "minimum":"785",
+        "quantity":"6785",
+        "info":"Item Name:RC Body Shell Material: Painted PVC Car shell size: 455 * 200 mm Package Included:1 X RC Body Shell"
+    },
+   
+
+
+
+    {
+        "name":"Tools",
+        "img":"https://i.ibb.co/mJswyNk/Tools.webp",
+        "price":"343",
+        "minimum":"343",
+        "quantity":"54434",
+        "info":"MRF ZLX is a tubeless type tyre available in 12,13, 14, and 15 inches size range. There are 14 sizes available with variety of sidewalls and widths."
+    },
+    {
+        "name":"Flamingo",
+        "img":"https://i.ibb.co/wdYCbyg/11-Battery.webp",
+        "price":"354",
+        "minimum":"6785",
+        "quantity":"344534",
+        "info":"Remove all kinds of colloid, carbon deposit and other sediment in the engine effectively, guarantee good lubrication, restore and improve automotive power"
+    },
+    {
+        "name":"Coolplay GTR- Gray",
+        "img":"https://i.ibb.co/t3B2tMj/10-car-body-part.webp",
+        "price":"763",
+        "minimum":"785",
+        "quantity":"6785",
+        "info":"Item Name:RC Body Shell Material: Painted PVC Car shell size: 455 * 200 mm Package Included:1 X RC Body Shell"
+    },
+    {
+        "name":"MRF ZLX",
+        "img":"https://i.ibb.co/4sK7FZb/5-BULB-and-LED.webp",
+        "price":"343",
+        "minimum":"343",
+        "quantity":"54434",
+        "info":"MRF ZLX is a tubeless type tyre available in 12,13, 14, and 15 inches size range. There are 14 sizes available with variety of sidewalls and widths."
+    }
+]
+
+

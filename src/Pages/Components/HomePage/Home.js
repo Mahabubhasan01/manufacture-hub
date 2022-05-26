@@ -4,12 +4,14 @@ import Banner from './Banner/Banner';
 import './Home.css'
 import Navbar from './Navbar/Navbar';
 import Parts from './Parts/Parts';
+import TotalItems from './Totalitems/TotalItems';
 
 const Home = () => {
     return (
         <div>
             <Banner/>
             <Parts/>
+            <TotalItems/>
         </div>
     );
 };

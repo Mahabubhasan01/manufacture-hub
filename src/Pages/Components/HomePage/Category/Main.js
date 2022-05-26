@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Engine = () => {
+const Main = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Engine = () => {
     );
 };
 
-export default Engine;
+export default Main;

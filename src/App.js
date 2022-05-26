@@ -9,6 +9,7 @@ import Home from "./Pages/Components/HomePage/Home";
 import Navbar from "./Pages/Components/HomePage/Navbar/Navbar";
 import TotalItems from "./Pages/Components/HomePage/Totalitems/TotalItems";
 import { PublicRoute } from "./Pages/Routes/PublicRoutes/PublicRoutes";
+import Notfound from "./Pages/Shared/Notfound";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="tyers" element={<Tyers />} />
           <Route path="engine" element={<Engine />} />
         </Route>
+        <Route path="*" element={<Notfound/>}/>
       </Routes>
       <Footer />
     </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Login from '../../Authentication/Login/Login';
+import Spinner from '../../Shared/Spiner/Spinner';
 import Banner from './Banner/Banner';
 import BrandSlider from './BrandSlider/BrandSlider';
 import Business from './BusinessInfo/Business';
@@ -18,6 +19,7 @@ const Home = () => {
             <BrandSlider/>
             <Business/>
             <Review/>
+            <Spinner/>
         </div>
     );
 };

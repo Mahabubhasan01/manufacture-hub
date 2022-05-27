@@ -1,10 +1,16 @@
 import React from 'react';
+import { useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle, useSignInWithTwitter } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../../firebase.init';
 
 const SocialAuth = () => {
+  const [signInWithGoogle, GUser, GLoading, GError] = useSignInWithGoogle(auth);
+  const [signInWithFacebook, FUser, FLoading, FError] = useSignInWithFacebook(auth);
+  const [signInWithGithub, GitUser, GitLoading, GitError] = useSignInWithGithub(auth);
+  const [signInWithTwitter, TUser, TLoading, TError] = useSignInWithTwitter(auth);
     return (
         <div class="flex justify-center mb-6">
-        <Link
+        <Link onClick={()=>signInWithFacebook()}
           to="#!"
           type="button"
           class="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
@@ -26,7 +32,7 @@ const SocialAuth = () => {
           </svg>
         </Link>
 
-        <Link
+        <Link onClick={()=>signInWithTwitter()}
           to="#!"
           type="button"
           class="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
@@ -48,7 +54,7 @@ const SocialAuth = () => {
           </svg>
         </Link>
 
-        <Link
+        <Link onClick={()=>signInWithGoogle()}
           to="#!"
           type="button"
           class="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
@@ -114,7 +120,7 @@ const SocialAuth = () => {
           </svg>
         </Link>
 
-        <Link
+        <Link onClick={()=>signInWithGithub()}
           to="#!"
           type="button"
           class="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"

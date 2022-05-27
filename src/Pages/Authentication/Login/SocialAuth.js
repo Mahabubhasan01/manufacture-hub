@@ -1,13 +1,23 @@
 import React from 'react';
 import { useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle, useSignInWithTwitter } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import useToken from '../../Hooks/useToken';
+import Spinner from '../../Shared/Spiner/Spinner';
 
 const SocialAuth = () => {
+  const navigate = useNavigate();
   const [signInWithGoogle, GUser, GLoading, GError] = useSignInWithGoogle(auth);
   const [signInWithFacebook, FUser, FLoading, FError] = useSignInWithFacebook(auth);
   const [signInWithGithub, GitUser, GitLoading, GitError] = useSignInWithGithub(auth);
   const [signInWithTwitter, TUser, TLoading, TError] = useSignInWithTwitter(auth);
+  /* const [token] = useToken(GUser,FUser,GitUser,TUser,); */
+  if(GLoading||FLoading||GitLoading||TLoading){
+    return <Spinner/>
+  }
+  if(GUser){
+    navigate('/')
+  }
     return (
         <div class="flex justify-center mb-6">
         <Link onClick={()=>signInWithFacebook()}

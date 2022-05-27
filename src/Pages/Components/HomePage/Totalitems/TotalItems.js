@@ -10,7 +10,7 @@ const TotalItems = () => {
         <Link to='/tyers' className="tab tab-bordered tab-active text-xl text-slate-900 font-bold">Body</Link >
         <Link to='/oil' className="tab tab-bordered text-xl tab text-slate-900 font-bold">Oil</Link >
       </div>
-      <Engine/>
+      {/* <Engine/> */}
       <Outlet/>
     </div>
   );

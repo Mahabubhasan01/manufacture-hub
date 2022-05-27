@@ -11,7 +11,7 @@ const PartsDetails = () => {
     <div>
       <div class="hero min-h-screen bg-base-200">
         <div class="hero-content flex-col lg:flex-row">
-          <img src={img} alt="" />
+          <img className='md:w-1/2 rounded-lg md:mr-10' src={img} alt="" />
           <div>
             <h1 class="text-5xl font-bold">{name}</h1>
             <p class="py-6"> Product Price: ${price}</p>

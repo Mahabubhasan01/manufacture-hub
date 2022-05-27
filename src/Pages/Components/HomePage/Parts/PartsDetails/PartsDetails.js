@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import auth from "../../../../../firebase.init";
 import usePartsDetails from "../../../../Hooks/usePartsDetails";
+import ReviewCard from "../../DashBoard/MyOrders/ReviewCard/ReviewCard";
 
 const PartsDetails = () => {
   const [user] = useAuthState(auth);
@@ -32,6 +33,7 @@ const PartsDetails = () => {
           </div>
         </div>
       </div>
+      <ReviewCard/>
     </div>
   );
 };

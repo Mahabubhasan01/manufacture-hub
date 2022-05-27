@@ -6,6 +6,7 @@ import {
 import { useForm } from "react-hook-form";
 import auth from "../../../firebase.init";
 import "./Login.css";
+import LoginCard from "./LoginCard/LoginCard";
 import SocialAuth from "./SocialAuth";
 import SocialLogin from "./SocialLogin";
 
@@ -17,7 +18,9 @@ const Login = () => {
 
     // react hook form 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+  const onSubmit = (data,event)=>
+  {console.log(data);
+  event.target.reset()}
   return (
     <div className="body">
       <div class="main">
@@ -31,6 +34,7 @@ const Login = () => {
 
             <input {...register('name')}
              type="text" name="txt" placeholder="User name" required="" />
+             {errors.name?.type === 'required' &&(<span className="label-text-alt text-red-500">{errors.name.message} </span>)}
             <input {...register('email',{
               required:{
                 value:true,
@@ -56,7 +60,7 @@ const Login = () => {
               placeholder="Password"
               required=""
             />
-            <button>Sign up</button>
+            <button className="">Sign up</button>
             <div class="flex flex-col w-full border-opacity-50">
               <div class="divider text-white">OR</div>
               <div class="grid h-10 card  rounded-box place-items-center">
@@ -65,27 +69,7 @@ const Login = () => {
             </div>
           </form>
         </div>
-
-
-        <div class="login">
-          <form>
-            <label className="label" for="chk" aria-hidden="true">
-              Login
-            </label>
-            <input type="email" name="email" placeholder="Email" required="" />
-            <input
-              type="password"
-              name="pswd"
-              placeholder="Password"
-              required=""
-            />
-            <button>Login</button>
-            <div class="divider text-primary">OR</div>
-            <div class="grid h-10 card  rounded-box place-items-center">
-              <SocialLogin />
-            </div>
-          </form>
-        </div>
+        <LoginCard/>
       </div>
     </div>
   );

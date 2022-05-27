@@ -1,6 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Login from "./Pages/Authentication/Login/Login";
+import AddReview from "./Pages/Components/DashBoard/AddReview/AddReview";
+import DashBoard from "./Pages/Components/DashBoard/DashBoard";
+import MyOrders from "./Pages/Components/DashBoard/MyOrders/MyOrders";
+import MyProfile from "./Pages/Components/DashBoard/Profile/MyProfile";
 import Engine from "./Pages/Components/HomePage/Category/Engine/Engine";
 import Oil from "./Pages/Components/HomePage/Category/Oil/Oil";
 import Tyers from "./Pages/Components/HomePage/Category/Tyers/Tyers";
@@ -23,6 +27,11 @@ function App() {
         {<Route path="/" element={<Home />} />}
         <Route path="/partsdetails/:Id" element={<PartsDetails/>}></Route>
         <Route path="login" element={<Login />} />
+        <Route path="dashboard"element={<DashBoard/>} >
+          <Route index element={<MyProfile/>}></Route>
+          <Route path="/myorders" element={<MyOrders/>}></Route>
+          <Route path="/addreview" element={<AddReview/>}></Route>
+        </Route>
         <Route path="/" element={<TotalItems />}>
           <Route path="oil" element={<Oil />} />
           <Route path="tyers" element={<Tyers />} />

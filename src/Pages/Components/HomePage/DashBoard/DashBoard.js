@@ -1,13 +1,39 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+import React from "react";
+import { Link, Outlet } from "react-router-dom";
 
 const DashBoard = () => {
-    return (
-        <div>
-            <h1>this is dashboard</h1>
-            <Outlet/>
+  return (
+    <div>
+      <div class="drawer drawer-mobile">
+        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content flex flex-col items-center justify-center">
+          {/*  <!-- Page content here --> */}
+          <label
+            for="my-drawer-2"
+            class="btn btn-primary drawer-button lg:hidden"
+          >
+            Open drawer
+          </label>
+          <Outlet />
         </div>
-    );
+        <div class="drawer-side">
+          <label for="my-drawer-2" class="drawer-overlay"></label>
+          <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+            {/* <!-- Sidebar content here --> */}
+            <li>
+              <Link to='/dashboard/myprofile'>My Profile</Link>
+            </li>
+            <li>
+              <Link to='/dashboard/myorders'>My Orders</Link>
+            </li>
+            <li>
+              <Link to='/dashboard/addreview'>Add a Review</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default DashBoard;

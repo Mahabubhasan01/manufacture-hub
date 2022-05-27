@@ -20,6 +20,7 @@ import ManageAllOrder from "./Pages/Components/HomePage/DashBoard/ManageAllOrder
 import AddProduct from "./Pages/Components/HomePage/DashBoard/AddProduct/AddProduct";
 import ManageOrder from "./Pages/Components/HomePage/DashBoard/ManageOrder/ManageOrder";
 import MakeAdmin from "./Pages/Components/HomePage/DashBoard/MakeAdmin/MakeAdmin";
+import EditProfile from "./Pages/Components/HomePage/DashBoard/Profile/ProfileEdit/EditProfile";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           <Route path="manageorder" element={<ManageOrder/>}/>
           <Route path="makeadmin" element={<MakeAdmin/>}></Route>
           <Route path="manageallorder" element={<ManageAllOrder/>}/>
+          <Route path="editprofile" element={<EditProfile/>}/>
         </Route>
         <Route path="*" element={<Notfound/>}/>
       </Routes>

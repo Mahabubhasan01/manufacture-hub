@@ -14,7 +14,7 @@ const Login = () => {
             <label className="label" for="chk" aria-hidden="true">
               Sign up
             </label>
-			
+
             <input type="text" name="txt" placeholder="User name" required="" />
             <input type="email" name="email" placeholder="Email" required="" />
             <input
@@ -27,7 +27,7 @@ const Login = () => {
             <div class="flex flex-col w-full border-opacity-50">
               <div class="divider text-white">OR</div>
               <div class="grid h-10 card  rounded-box place-items-center">
-			  <SocialAuth/>
+                <SocialAuth />
               </div>
             </div>
           </form>
@@ -45,10 +45,10 @@ const Login = () => {
               required=""
             />
             <button>Login</button>
-			<div class="divider text-primary">OR</div>
-              <div class="grid h-10 card  rounded-box place-items-center">
-			  <SocialLogin/>
-              </div>
+            <div class="divider text-primary">OR</div>
+            <div class="grid h-10 card  rounded-box place-items-center">
+              <SocialLogin />
+            </div>
           </form>
         </div>
       </div>

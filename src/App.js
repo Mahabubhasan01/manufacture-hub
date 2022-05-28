@@ -18,9 +18,9 @@ import { PublicRoute } from "./Pages/Routes/PublicRoutes/PublicRoutes";
 import Notfound from "./Pages/Shared/Notfound";
 import ManageAllOrder from "./Pages/Components/HomePage/DashBoard/ManageAllOrder/ManageAllOrder";
 import AddProduct from "./Pages/Components/HomePage/DashBoard/AddProduct/AddProduct";
-import ManageOrder from "./Pages/Components/HomePage/DashBoard/ManageOrder/ManageOrder";
 import MakeAdmin from "./Pages/Components/HomePage/DashBoard/MakeAdmin/MakeAdmin";
 import EditProfile from "./Pages/Components/HomePage/DashBoard/Profile/ProfileEdit/EditProfile";
+import ManageProducts from "./Pages/Components/HomePage/DashBoard/ManageProducts/ManageProducts";
 
 function App() {
   return (
@@ -46,7 +46,7 @@ function App() {
           <Route path="myorders" element={<MyOrders/>}></Route>
           <Route path="addreview" element={<AddReview/>}></Route>
           <Route path="addproduct" element={<AddProduct/>}/>
-          <Route path="manageorder" element={<ManageOrder/>}/>
+          <Route path="manageproducts" element={<ManageProducts/>}/>
           <Route path="makeadmin" element={<MakeAdmin/>}></Route>
           <Route path="manageallorder" element={<ManageAllOrder/>}/>
           <Route path="editprofile" element={<EditProfile/>}/>

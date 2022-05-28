@@ -1,59 +1,82 @@
 import React from "react";
-import { PaperClipIcon } from "@heroicons/react/solid";
+import { PaperClipIcon, StarIcon } from "@heroicons/react/solid";
 import { Link, useNavigate } from "react-router-dom";
 import EditProfile from "./ProfileEdit/EditProfile";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../../../firebase.init";
 
 const MyProfile = () => {
-    const navigate = useNavigate()
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
   return (
     <div className="bg-white shadow overflow-hidden sm:rounded-lg">
       <div className="px-4 py-5 sm:px-6">
         <h3 className="text-lg leading-6 font-medium text-gray-900">
-          Applicant Information
+          User Information
         </h3>
         <p className="mt-1 max-w-2xl text-sm text-gray-500">
-          Personal details and application.
+          Personal details.
         </p>
-        <button to='/editprofile' >Edit your Profile</button>
+        <button to="/editprofile">Edit your Profile</button>
       </div>
       <div className="border-t border-gray-200">
         <dl>
           <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt className="text-sm font-medium text-gray-500">Full name</dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              Margot Foster
+              {user?.displayName}
             </dd>
           </div>
           <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">
-              Application for
-            </dt>
-            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              Backend Developer
+            <dt className="text-sm font-medium text-gray-500">User Type</dt>
+            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 flex font-bold">
+              <p>Platinum
+             <StarIcon/></p>
             </dd>
           </div>
           <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt className="text-sm font-medium text-gray-500">Email address</dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              margotfoster@example.com
+              {user?.email}
+            </dd>
+          </div>
+          <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt className="text-sm font-medium text-gray-500">Phone Number</dt>
+            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              {user?.email}
+            </dd>
+          </div>
+          <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt className="text-sm font-medium text-gray-500">Facebook Account</dt>
+            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              {user?.email}
+            </dd>
+          </div>
+          <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt className="text-sm font-medium text-gray-500">Github Account</dt>
+            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              {user?.email}
+            </dd>
+          </div>
+          <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt className="text-sm font-medium text-gray-500">Linkedin</dt>
+            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              {user?.email}
             </dd>
           </div>
           <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt className="text-sm font-medium text-gray-500">
-              Salary expectation
+              Product review
             </dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              $120,000
+              120,000 
             </dd>
           </div>
           <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">About</dt>
+            <dt className="text-sm font-medium text-gray-500">Address</dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim
-              incididunt cillum culpa consequat. Excepteur qui ipsum aliquip
-              consequat sint. Sit id mollit nulla mollit nostrud in ea officia
-              proident. Irure nostrud pariatur mollit ad adipisicing
-              reprehenderit deserunt qui eu.
+              Country :..........................! District:........................!
+              City.......................! Road/street...................!
             </dd>
           </div>
           <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -105,7 +128,8 @@ const MyProfile = () => {
             </dd>
           </div>
         </dl>
-      </div><EditProfile/>
+      </div>
+      <EditProfile />
     </div>
   );
 };

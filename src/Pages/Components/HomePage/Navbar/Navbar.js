@@ -41,7 +41,7 @@ const Navbar = ({ children }) => {
   );
   return (
     <div
-      className="navbar bg-base-100"
+      className="navbar bg-primary rounded-t-lg "
       data-theme={darkMood ? "dark" : "light"}
     >
       <div className="navbar-start">
@@ -64,7 +64,7 @@ const Navbar = ({ children }) => {
           </label>
           <ul
             tabIndex="0"
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 font-bold"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 font-bold text-white "
           >
             {item}
             
@@ -73,9 +73,9 @@ const Navbar = ({ children }) => {
         <Link to="/" className={darkMood?'':'text-black'}>
           <img className="m-0 p-0" src={logo} alt="" />
         </Link>
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal p-0 font-bold">{item}</ul>
+      </div> 
+      <div className="navbar-center hidden lg:flex bg-primary">
+        <ul className="menu menu-horizontal p-0 font-bold text-white">{item}</ul>
       </div>
      <Profile darkMood={darkMood} setDarkMode={setDarkMode} user={user}></Profile>
     </div>

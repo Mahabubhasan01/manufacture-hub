@@ -22,6 +22,7 @@ import MakeAdmin from "./Pages/Components/HomePage/DashBoard/MakeAdmin/MakeAdmin
 import EditProfile from "./Pages/Components/HomePage/DashBoard/Profile/ProfileEdit/EditProfile";
 import ManageProducts from "./Pages/Components/HomePage/DashBoard/ManageProducts/ManageProducts";
 import Portfolio from "./Pages/MyPortFolio/Portfolio";
+import Blogs from "./Pages/Shared/Blogs";
 
 function App() {
   return (
@@ -35,12 +36,12 @@ function App() {
         <Route path="/partsdetails/:Id" element={<PartsDetails/>}></Route>
         <Route path="login" element={<Login />} />
 
-        {/* <Route path="/" element={<TotalItems />}>
+        <Route path="/" element={<Home />}>
           <Route index element={<Oil />} />
           <Route path="/oil" element={<Oil />} />
           <Route path="/tyers" element={<Tyers />} />
           <Route path="engine" element={<Engine />} />
-        </Route> */}
+        </Route>
         <Route path="/dashboard"element={<DashBoard/>} >
           <Route index element={<MyProfile/>}></Route>
           <Route path="myprofile" element={<MyProfile/>}></Route>
@@ -53,6 +54,7 @@ function App() {
           <Route path="editprofile" element={<EditProfile/>}/>
         </Route>
         <Route path="portfolio" element={<Portfolio/>}/>
+        <Route path="blogs" element={<Blogs/>} />
         <Route path="*" element={<Notfound/>}/>
       </Routes>
       <Footer />

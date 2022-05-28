@@ -12,7 +12,7 @@ const ReviewCard = () => {
   const [review] = useReview(email);
   console.log(review)
   return (
-    <div className="review md:my-52">
+    <div className="review md:my-32">
       <h1 className="font-bold text-4xl text-center">Review Satisfaction</h1>
       <ul class="cards">
         <li>

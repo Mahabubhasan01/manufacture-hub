@@ -18,13 +18,13 @@ const Navbar = ({ children }) => {
         <Link className="" to="/">Home</Link>
       </li>
       <li>
-        <Link to="/">dfgas</Link>
-      </li>
-      <li>
         <Link to="/">home</Link>
       </li>
       <li>
         <Link to="/dashboard">DashBoard</Link>
+      <li>
+        <Link to="/blogs">Blogs</Link>
+      </li>
       </li>
       <li>
         <Link to="/Portfolio">Portfolio</Link>

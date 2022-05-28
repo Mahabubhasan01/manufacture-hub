@@ -26,8 +26,8 @@ const Login = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data, event) => {
-    createUserWithEmailAndPassword(data.email, data.password);
+  const onSubmit = async(data, event) => {
+  await  createUserWithEmailAndPassword(data.email, data.password);
     console.log(data);
     event.target.reset();
   };

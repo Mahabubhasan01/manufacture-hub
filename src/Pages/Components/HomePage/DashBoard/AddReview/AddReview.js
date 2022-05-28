@@ -1,18 +1,41 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../../../firebase.init";
 const AddReview = () => {
+  const [user] = useAuthState(auth)
+    console.log(user)
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) =>{ 
+  const onSubmit = (data,event) =>{ 
+    const img=user?.photoURL;
+    const email = user?.email
+    const order ={
+      name:data.name,
+      email:email,
+      rate:data.ratting,
+      info:data.feedback,
+      img:img
+    }
+    const url = 'http://localhost:5000/review';
+    fetch(url,{
+      method:'POST',
+      headers:{
+        'content-type':'application/json'
+      },
+      body:JSON.stringify(order)
+    }).then(res=>res.json()).then(data=>{
+      console.log('success',data);
+      event.target.reset()
+    })
     console.log(data);}
   return (
     <div>
-      <div class="card w-96 bg-base-100 shadow-xl">
+      <div class="card w-96 bg-base-100 shadow-xl mx-auto">
         <div class="card-body">
           <h2 class="text-2xl font-bold text-primary text-center">
             Product Feedback

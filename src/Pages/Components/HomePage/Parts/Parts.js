@@ -6,10 +6,6 @@ import './Parts.css'
 
 const Parts = () => {
   const [parts]=useParts();
-  /* if(!parts){
-    return <Spinner/>
-  } */
-  console.log(parts)
     return (
         <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 mx-auto'>
           {

@@ -1,8 +1,16 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../../../../firebase.init";
+import useReview from "../../../../Hooks/useReview";
 import './ReviewCard.css'
+import SingleReviewCard from "./SingleReviewCard";
 
 const ReviewCard = () => {
+  const [user] = useAuthState(auth)
+  const email = user?.email;
+  const [review] = useReview(email);
+  console.log(review)
   return (
     <div className="review md:my-52">
       <h1 className="font-bold text-4xl text-center">Review Satisfaction</h1>
@@ -126,6 +134,7 @@ const ReviewCard = () => {
             </div>
           </Link>
         </li>
+        <SingleReviewCard/>
       </ul>
     </div>
   );

@@ -396,7 +396,7 @@ const ReviewCard = () => {
                     James Schofield
                   </p>
                   <p class="text-sm leading-none text-gray-600 dark:text-white">
-                    23 June 2021
+                    23 June 2022
                   </p>
                 </div>
               </div>

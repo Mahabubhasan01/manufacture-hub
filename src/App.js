@@ -21,6 +21,7 @@ import AddProduct from "./Pages/Components/HomePage/DashBoard/AddProduct/AddProd
 import MakeAdmin from "./Pages/Components/HomePage/DashBoard/MakeAdmin/MakeAdmin";
 import EditProfile from "./Pages/Components/HomePage/DashBoard/Profile/ProfileEdit/EditProfile";
 import ManageProducts from "./Pages/Components/HomePage/DashBoard/ManageProducts/ManageProducts";
+import Portfolio from "./Pages/MyPortFolio/Portfolio";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           <Route path="manageallorder" element={<ManageAllOrder/>}/>
           <Route path="editprofile" element={<EditProfile/>}/>
         </Route>
+        <Route path="portfolio" element={<Portfolio/>}/>
         <Route path="*" element={<Notfound/>}/>
       </Routes>
       <Footer />

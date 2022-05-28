@@ -8,19 +8,29 @@ import auth from "../../../firebase.init";
 import "./Login.css";
 import LoginCard from "./LoginCard/LoginCard";
 import SocialAuth from "./SocialAuth";
-import SocialLogin from "./SocialLogin";
+import useToken from '../../Hooks/useToken'
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate()
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-  const [signInWithLogin, Luser, Lloading, Lerror] =
-    useSignInWithEmailAndPassword(auth);
-
-    // react hook form 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = (data,event)=>
-  {console.log(data);
-  event.target.reset()}
+    const [token] = useToken(user)
+  /* if(token){
+    navigate('/')
+  } */
+  // react hook form
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data, event) => {
+    createUserWithEmailAndPassword(data.email, data.password);
+    console.log(data);
+    event.target.reset();
+  };
   return (
     <div className="body">
       <div class="main">
@@ -32,29 +42,45 @@ const Login = () => {
               Sign up
             </label>
 
-            <input {...register('name')}
-             type="text" name="txt" placeholder="User name" required="" />
-             {errors.name?.type === 'required' &&(<span className="label-text-alt text-red-500">{errors.name.message} </span>)}
-            <input {...register('email',{
-              required:{
-                value:true,
-              message:'Email is required'},
-              pattern:{
-                value:/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                message:'Enter valid email here'
-              }
-            })}
-             type="email" name="email" placeholder="Email" required="" />
-            <input {...register('password',{
-              required:{
-                value:true,
-                message:'Password is must required'
-              },
-              pattern:{
-                value:/[a-zA-Z0-9]{8,}/,
-                message:'Must be 8 letter or number'
-              }
-            })}
+            <input
+              {...register("name")}
+              type="text"
+              name="txt"
+              placeholder="User name"
+              required=""
+            />
+            {errors.name?.type === "required" && (
+              <span className="label-text-alt text-red-500">
+                {errors.name.message}{" "}
+              </span>
+            )}
+            <input
+              {...register("email", {
+                required: {
+                  value: true,
+                  message: "Email is required",
+                },
+                pattern: {
+                  value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                  message: "Enter valid email here",
+                },
+              })}
+              type="email"
+              name="email"
+              placeholder="Email"
+              required=""
+            />
+            <input
+              {...register("password", {
+                required: {
+                  value: true,
+                  message: "Password is must required",
+                },
+                pattern: {
+                  value: /[a-zA-Z0-9]{8}/,
+                  message: "Must be 8 letter or number",
+                },
+              })}
               type="password"
               name="pswd"
               placeholder="Password"
@@ -69,7 +95,7 @@ const Login = () => {
             </div>
           </form>
         </div>
-        <LoginCard/>
+        <LoginCard />
       </div>
     </div>
   );

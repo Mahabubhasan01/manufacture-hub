@@ -12,11 +12,11 @@ const SocialLogin = () => {
   const [signInWithFacebook, FUser, FLoading, FError] = useSignInWithFacebook(auth);
   const [signInWithGithub, GitUser, GitLoading, GitError] = useSignInWithGithub(auth);
   const [signInWithTwitter, TUser, TLoading, TError] = useSignInWithTwitter(auth);
-  /* const [token] = useToken(GUser,FUser,GitUser,TUser,); */
+  const [token] = useToken(GUser,FUser,GitUser,TUser,);
   if(GLoading||FLoading||GitLoading||TLoading){
     return <Spinner/>
   }
-  if(GUser){
+  if(token){
     navigate('/')
   }
   return (

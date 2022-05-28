@@ -5,7 +5,7 @@ const PartItem = ({ part }) => {
   const navigate = useNavigate()
   const { name, img, price, info, minimum, quantity,_id } = part;
   return (
-    <div>
+    <div >
       <div class="card w-96 bg-base-100 shadow-xl">
         <figure className="bg-secondary">
           <img className='h-52' src={img} alt="Shoes" />

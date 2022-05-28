@@ -20,6 +20,7 @@ const Banner = () => {
                 <ol className="flex my-5 text-white text-xl items-center" ><Icons/>Tuggable carts.</ol>
               </ul>
             </div>
+            
             <img
               className="p-5"
               src="https://i.ibb.co/4Y35cyr/spare-parts.png"

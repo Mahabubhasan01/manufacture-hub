@@ -11,17 +11,17 @@ const SocialAuth = () => {
   const [signInWithFacebook, FUser, FLoading, FError] = useSignInWithFacebook(auth);
   const [signInWithGithub, GitUser, GitLoading, GitError] = useSignInWithGithub(auth);
   const [signInWithTwitter, TUser, TLoading, TError] = useSignInWithTwitter(auth);
-  /* const [token] = useToken(GUser,FUser,GitUser,TUser,); */
+  const [token] = useToken(GUser,FUser,GitUser,TUser,);
   if(GLoading||FLoading||GitLoading||TLoading){
     return <Spinner/>
   }
-  if(GUser){
+  if(token){
     navigate('/')
   }
     return (
         <div class="flex justify-center mb-6">
         <Link onClick={()=>signInWithFacebook()}
-          to="#!"
+          to="#"
           type="button"
           class="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
         >

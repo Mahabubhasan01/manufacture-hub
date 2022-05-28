@@ -26,6 +26,9 @@ const Navbar = ({ children }) => {
       <li>
         <Link to="/dashboard">DashBoard</Link>
       </li>
+      <li>
+        <Link to="/Portfolio">Portfolio</Link>
+      </li>
 
       <li>
         <Link to="/">Contact</Link>

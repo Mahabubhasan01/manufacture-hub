@@ -6,7 +6,7 @@ import './Parts.css'
 const Parts = () => {
   const [parts]=useParts();
     return (
-        <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5'>
+        <div className='grid grid-cols-1 md:grid-cols-2 mx-auto lg:grid-cols-3 gap-5'>
           {
             parts.map(part=><PartItem
             key={part._id}

@@ -46,10 +46,10 @@ function App() {
         <Route path="login" element={<Login />} />
 
         <Route path="/" element={<Home />}>
-          <Route index element={<Oil />} />
-          <Route path="/oil" element={<Oil />} />
+          <Route index element={<Engine />} />
           <Route path="/tyers" element={<Tyers />} />
           <Route path="engine" element={<Engine />} />
+          <Route path="/oil" element={<Oil />} />
         </Route>
         <Route path="/dashboard" element={<DashBoard />}>
           <Route index element={<MyProfile />}></Route>

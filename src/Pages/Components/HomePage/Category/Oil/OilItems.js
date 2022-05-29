@@ -4,7 +4,7 @@ const OilItems = ({item}) => {
     const {name,img,price,quantity,minimum,info}=item
     return (
         <div>
-            <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card mx-auto w-96 bg-base-100 shadow-xl">
         <figure className='bg-red-400'>
           <img  className='h-52 ' src={img} alt="Shoes" />
         </figure>

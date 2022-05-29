@@ -5,7 +5,7 @@ import auth from "../../../../firebase.init";
 
 const DashBoard = () => {
   const [user] = useAuthState(auth);
-  const admin = false
+  const admin = true
   return (
     <div>
       <div class="drawer drawer-mobile">

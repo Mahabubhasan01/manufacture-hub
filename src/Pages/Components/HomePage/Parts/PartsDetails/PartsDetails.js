@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../../../../firebase.init";
 import usePartsDetails from "../../../../Hooks/usePartsDetails";
 import ReviewCard from "../../DashBoard/MyOrders/ReviewCard/ReviewCard";
@@ -12,12 +14,46 @@ const PartsDetails = () => {
   const { name, img, price, quantity, minimum, info } = details;
   const qty = parseInt(quantity);
   const [increase, setIncrease] = useState(1);
+  const [minusQ, setMinusQ] = useState(1);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data, event) => {
+    const productPrice = parseFloat(price * increase);
+    const productQuantity = parseFloat(increase);
+    const img = user?.photoURL;
+    const email = user?.email;
+    const order = {
+      email: email,
+      name: name,
+      img:img,
+      price: productPrice,
+      quantity: productQuantity,
+      phone: data.phone,
+      address: data.address,
+    };
+    const url = "http://localhost:5000/order";
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(order),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("success", data);
+        toast("Successfully Order", name);
+        event.target.reset();
+      });
+  };
 
-  console.log(details);
   return (
     <div>
       <div class="hero min-h-screen bg-base-200">
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div class="hero-content flex-col lg:flex-row">
             <img className="md:w-1/2 rounded-lg md:mr-10" src={img} alt="" />
             <div>
@@ -70,7 +106,7 @@ const PartsDetails = () => {
               <p class="py-3">{info}</p>
               <div class="form-control w-full max-w-xs">
                 <h1>Purchase by : {user?.displayName}</h1>
-                <h1>Email  : {user?.email}</h1>
+                <h1>Email : {user?.email}</h1>
                 <label
                   htmlFor="company-website"
                   className="block text-sm font-medium text-gray-700"
@@ -78,7 +114,9 @@ const PartsDetails = () => {
                   Phone Number
                 </label>
                 <input
+                  {...register("phone")}
                   type="number"
+                  name="phone"
                   placeholder="Type here"
                   class="input input-bordered w-full max-w-xs"
                 />
@@ -91,7 +129,9 @@ const PartsDetails = () => {
                   Product Quantity
                 </label>
                 <input
+                  {...register("quantity")}
                   type="number"
+                  name="quantity"
                   placeholder="Type here"
                   class="input input-bordered w-full max-w-xs"
                 />
@@ -105,8 +145,9 @@ const PartsDetails = () => {
                 </label>
                 <div className="mt-1">
                   <textarea
+                    {...register("address")}
                     id="about"
-                    name="about"
+                    name="address"
                     rows={5}
                     className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                     placeholder="you@example.com"

@@ -8,13 +8,12 @@ const AddReview = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
   const onSubmit = (data,event) =>{ 
     const img=user?.photoURL;
     const email = user?.email
-    const order ={
+    const review ={
       name:data.name,
       email:email,
       rate:data.ratting,
@@ -27,7 +26,7 @@ const AddReview = () => {
       headers:{
         'content-type':'application/json'
       },
-      body:JSON.stringify(order)
+      body:JSON.stringify(review)
     }).then(res=>res.json()).then(data=>{
       console.log('success',data);
       event.target.reset()

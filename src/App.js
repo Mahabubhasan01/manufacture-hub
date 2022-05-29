@@ -26,6 +26,7 @@ import Blogs from "./Pages/Shared/Blogs";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ProtectedAuth from "./Pages/Authentication/ProtectedAuth";
+import Payment from "./Pages/Shared/Payment/Payment";
 function App() {
   return (
     <div>
@@ -65,6 +66,7 @@ function App() {
 
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="blogs" element={<Blogs />} />
+        <Route path="payment" element={<Payment/>}/>
         <Route path="*" element={<Notfound />} />
       </Routes>
       <Footer />

@@ -11,37 +11,40 @@ const LoginCard = () => {
   const location = useLocation()
   const from = location.state?.from?.pathname || '/';
   const navigate = useNavigate()
-  const [token] = useToken()
   const [
     signInWithEmailAndPassword,
     user,
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
+  const [token] = useToken(user)
+
   useEffect(()=>{
     if(token){
       navigate(from,{replace:true})
     }
   },[token,navigate,from]);
   
+  
 
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data, event) => {
     signInWithEmailAndPassword(data.email,data.password)
       console.log(data);
-      /* event.target.reset(); */
+      event.target.reset();
     };
     if(loading){
       return <Spinner/>
     }
-    if(errors){
-      toast.error('please  make sure your credential')
+    if (error || errors) {
+      toast.error(
+        <p className="text-red-500">{error?.message || errors?.message}</p>
+      );
     }
     return (
         <div class="login">

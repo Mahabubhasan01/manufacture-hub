@@ -56,8 +56,7 @@ const ReviewCard = () => {
                 </div>
               </div>
               <p className="card__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores, blanditiis?
+               Really cool items.absolutely appreaciate
               </p>
             </div>
           </Link>
@@ -100,8 +99,7 @@ const ReviewCard = () => {
                 </div>
               </div>
               <p className="card__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores, blanditiis?
+                Thanks for before time get benefit.
               </p>
             </div>
           </Link>
@@ -126,7 +124,7 @@ const ReviewCard = () => {
                 <div className="card__header-text">
                   <h3 className="card__title">Jessica Parker</h3>
                   <span className="card__tagline">
-                    Lorem ipsum dolor sit amet consectetur
+                   That is awesome carry on
                   </span>
                   <div className="flex items-center justify-center">
                     <p className="font-bold text-xl mr-3 text-primary" >5</p>
@@ -147,8 +145,7 @@ const ReviewCard = () => {
                 </div>
               </div>
               <p className="card__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores, blanditiis?
+               I did not believe that .very cool 
               </p>
             </div>
           </Link>
@@ -191,8 +188,7 @@ const ReviewCard = () => {
                 </div>
               </div>
               <p className="card__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores, blanditiis?
+               Thanks sir for first time.
               </p>
             </div>
           </Link>

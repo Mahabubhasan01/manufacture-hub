@@ -8,34 +8,39 @@ import auth from "../../../firebase.init";
 import "./Login.css";
 import LoginCard from "./LoginCard/LoginCard";
 import SocialAuth from "./SocialAuth";
-import useToken from '../../Hooks/useToken'
+import useToken from "../../Hooks/useToken";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../../Shared/Spiner/Spinner";
+import { toast } from "react-toastify";
 
 const Login = () => {
-  
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-    const [token] = useToken(user);
-  if(token){
-    navigate('/')
-  }
-
+  const [token] = useToken(user);
   // react hook form
   const {
     register,
     handleSubmit,
-    watch,
+
     formState: { errors },
   } = useForm();
-  const onSubmit = async(data, event) => {
-  await  createUserWithEmailAndPassword(data.email, data.password);
+  const onSubmit = async (data, event) => {
+    await createUserWithEmailAndPassword(data.email, data.password);
     console.log(data);
     event.target.reset();
   };
-  if(loading){
-    return <Spinner/>
+
+  if (token) {
+    navigate("/");
+  }
+  if (loading) {
+    return <Spinner />;
+  }
+  if (error || errors) {
+    toast.error(
+      <p className="text-red-500">{error?.message || errors?.message}</p>
+    );
   }
   return (
     <div className="body">
@@ -52,8 +57,8 @@ const Login = () => {
               {...register("name")}
               type="text"
               name="name"
-              placeholder="User name"
-              required=""
+              placeholder="Your name"
+              required="Your name is required"
             />
             {/* {errors.name?.type === "required" && (
               <span className="label-text-alt text-red-500">
@@ -61,8 +66,9 @@ const Login = () => {
               </span>
             )} */}
             <input
-              {...register("email",
-              /*  {
+              {...register(
+                "email"
+                /*  {
                 required: {
                   value: true,
                   message: "Email is required",
@@ -76,11 +82,12 @@ const Login = () => {
               type="email"
               name="email"
               placeholder="Email"
-              required=""
+              required="Email is required"
             />
             <input
-              {...register("password", 
-              /* {
+              {...register(
+                "password"
+                /* {
                 required: {
                   value: true,
                   message: "Password is must required",
@@ -94,7 +101,7 @@ const Login = () => {
               type="password"
               name="password"
               placeholder="Password"
-              required=""
+              required="password is required"
             />
             <button className="">Sign up</button>
             <div class="flex flex-col w-full border-opacity-50">

@@ -1,6 +1,22 @@
 import React from "react";
+import { useQuery } from "react-query";
+import Spinner from "../../../../Shared/Spiner/Spinner";
+import allOrders from "./allOrders";
 
 const ManageAllOrder = () => {
+  const url = `http://localhost:5000/order`;
+  const { data: orders,isLoading,refetch,} = useQuery("product", () => fetch(url,
+    /*  {
+    method: "GET",
+    headers: {
+      authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  } */
+  ).then((res) => res.json()));
+  if(isLoading){
+    return <Spinner/>
+  }
+  console.log(orders)
   return (
     <div>
       <div>
@@ -14,46 +30,17 @@ const ManageAllOrder = () => {
                   </label>
                 </th>
                 <th>Name</th>
-                <th>Email</th>
-                <th>Access Area</th>
+                <th>Price</th>
+                <th>Quantity</th>
                 <th>Status</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th>
-                  <label>
-                    <input type="checkbox" class="checkbox" />
-                  </label>
-                </th>
-                <td>
-                  <div class="flex items-center space-x-3">
-                    <div class="avatar">
-                      <div class="mask mask-squircle w-12 h-12">
-                        <img
-                          src="/tailwind-css-component-profile-2@56w.png"
-                          alt="Avatar Tailwind CSS Component"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <div class="font-bold">Hart Hagerty</div>
-                      <div class="text-sm opacity-50">United States</div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  Zemlak, Daniel and Leannon
-                  <br />
-                  <span class="badge badge-ghost badge-sm">
-                    Desktop Support Technician
-                  </span>
-                </td>
-                <td>Purple</td>
-                <th>
-                  <button class="btn btn-ghost btn-xs">Make Admin</button>
-                </th>
-              </tr>
+             {
+               orders.map(order=><allOrders
+               order={order}
+                 key={order._id} ></allOrders>)
+             }
 
               <tr>
                 <th>
@@ -72,7 +59,7 @@ const ManageAllOrder = () => {
                       </div>
                     </div>
                     <div>
-                      <div class="font-bold">Brice Swyre</div>
+                      <div class="font-bold">{orders.length}</div>
                       <div class="text-sm opacity-50">China</div>
                     </div>
                   </div>

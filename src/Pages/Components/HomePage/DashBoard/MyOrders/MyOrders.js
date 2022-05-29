@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const MyOrders = () => {
+  const navigate= useNavigate()
   return (
     <div>
       <div class="bg-gray-100">
@@ -193,6 +194,9 @@ const MyOrders = () => {
               <h1 class="font-semibold text-2xl border-b pb-8">
                 Order Summary
               </h1>
+              <h1 class="font-semibold text-xl  border-b pb-8">
+                Order Status : <span className="text-yellow-500">Unpaid</span>
+              </h1>
               <div class="flex justify-between mt-10 mb-5">
                 <span class="font-semibold text-sm uppercase">Items 3</span>
                 <span class="font-semibold text-sm">590$</span>
@@ -227,7 +231,8 @@ const MyOrders = () => {
                   <span>Total cost</span>
                   <span>$600</span>
                 </div>
-                <button class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">
+                <button onClick={()=>navigate(`/payment`)}
+                 class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">
                   Checkout
                 </button>
               </div>

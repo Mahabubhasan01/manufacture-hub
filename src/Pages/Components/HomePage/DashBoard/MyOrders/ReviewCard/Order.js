@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Order = ({ order }) => {
-  const { name, img, price, quantity,_id } = order;
+  const { name, img, price, quantity,_id,total } = order;
+  const totalA = parseFloat(total*quantity)
   const deleteItem = id =>{
     const url  =  `http://localhost:5000/order/${id}`;
     fetch(url,{
@@ -78,7 +79,7 @@ const Order = ({ order }) => {
         {quantity}
       </div>
       <span class="text-center w-1/5 font-semibold text-sm">{price}</span>
-      <span class="text-center w-1/5 font-semibold text-sm">{price}</span>
+      <span class="text-center w-1/5 font-semibold text-sm">{totalA}</span>
     </div>
   );
 };

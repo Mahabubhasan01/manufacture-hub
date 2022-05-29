@@ -28,9 +28,10 @@ const PartsDetails = () => {
     const order = {
       email: email,
       name: name,
-      img:img,
-      price: productPrice,
-      quantity: productQuantity,
+      img: img,
+      price: price,
+      quantity: data.quantity,
+      total: productPrice,
       phone: data.phone,
       address: data.address,
     };

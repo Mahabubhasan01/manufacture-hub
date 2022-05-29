@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { useAuthState} from "react-firebase-hooks/auth";
-import { signOut } from 'firebase/auth';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
 
 import { Link } from "react-router-dom";
 import auth from "../../../../firebase.init";
 import "./Navbar.css";
 import Profile from "./Profile/Profile";
-import logo from './logo.png'
-import {  toast } from 'react-toastify';
+import logo from "./logo.png";
+import { toast } from "react-toastify";
 
 const Navbar = ({ children }) => {
   const [darkMood, setDarkMode] = useState();
@@ -16,17 +16,18 @@ const Navbar = ({ children }) => {
   const item = (
     <>
       <li>
-        <Link className="" to="/">Home</Link>
+        <Link className="" to="/">
+          Home
+        </Link>
       </li>
-      <li>
+      {/* <li>
         <Link to="/">home</Link>
-      </li>
-      <li>
-        <Link to="/dashboard">DashBoard</Link>
+      </li> */}
+      
       <li>
         <Link to="/blogs">Blogs</Link>
       </li>
-      </li>
+
       <li>
         <Link to="/Portfolio">Portfolio</Link>
       </li>
@@ -34,13 +35,25 @@ const Navbar = ({ children }) => {
       <li>
         <Link to="/">Contact</Link>
       </li>
-      { !user?
-          <li>
-        <Link to="/login">Login</Link>
-      </li>:
-          <li onClick={()=>{{signOut(auth)}toast('Successfully logout')}}>
-        <Link to="/">Logout</Link>
-      </li>}
+      {user?<li>
+        <Link to="/dashboard">DashBoard</Link>
+      </li>:''}
+      {!user ? (
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+      ) : (
+        <li
+          onClick={() => {
+            {
+              signOut(auth);
+            }
+            toast("Successfully logout");
+          }}
+        >
+          <Link to="/">Logout</Link>
+        </li>
+      )}
     </>
   );
   return (
@@ -71,17 +84,22 @@ const Navbar = ({ children }) => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52 font-bold text-white  "
           >
             {item}
-            
           </ul>
         </div>
-        <Link to="/" className={darkMood?'':'text-black'}>
+        <Link to="/" className={darkMood ? "" : "text-black"}>
           <img className="m-0 p-0" src={logo} alt="" />
         </Link>
-      </div> 
-      <div className="navbar-center hidden lg:flex bg-primary">
-        <ul className="menu menu-horizontal p-0 font-bold text-white">{item}</ul>
       </div>
-     <Profile darkMood={darkMood} setDarkMode={setDarkMode} user={user}></Profile>
+      <div className="navbar-center hidden lg:flex bg-primary">
+        <ul className="menu menu-horizontal p-0 font-bold text-white">
+          {item}
+        </ul>
+      </div>
+      <Profile
+        darkMood={darkMood}
+        setDarkMode={setDarkMode}
+        user={user}
+      ></Profile>
     </div>
   );
 };

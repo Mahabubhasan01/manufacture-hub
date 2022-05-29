@@ -21,7 +21,7 @@ const PartsDetails = () => {
           <div class="hero-content flex-col lg:flex-row">
             <img className="md:w-1/2 rounded-lg md:mr-10" src={img} alt="" />
             <div>
-              <h1 class="text-5xl font-bold">{name}</h1>
+              <h1 class="text-5xl font-bold">Product Name: {name}</h1>
               <p class="py-3">
                 {" "}
                 Product Price: {increase * 1} x ${price * increase}
@@ -69,6 +69,8 @@ const PartsDetails = () => {
               <p class="py-3">Minimum {minimum}</p>
               <p class="py-3">{info}</p>
               <div class="form-control w-full max-w-xs">
+                <h1>Purchase by : {user?.displayName}</h1>
+                <h1>Email  : {user?.email}</h1>
                 <label
                   htmlFor="company-website"
                   className="block text-sm font-medium text-gray-700"

@@ -1,7 +1,7 @@
 import React from "react";
 import {
   useCreateUserWithEmailAndPassword,
-  useSignInWithEmailAndPassword,
+  
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import auth from "../../../firebase.init";
@@ -25,10 +25,10 @@ const Login = () => {
 
     formState: { errors },
   } = useForm();
-  const onSubmit = async (data, event) => {
-    await createUserWithEmailAndPassword(data.email, data.password);
+  const onSubmit =  (data, event) => {
+     createUserWithEmailAndPassword(data.email, data.password);
     console.log(data);
-    event.target.reset();
+    /* event.target.reset(); */
   };
 
   if (token) {

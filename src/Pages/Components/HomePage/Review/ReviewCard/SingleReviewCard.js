@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Ratting from '../../../../Shared/Ratting'
 
 const SingleReviewCard = () => {
     return (
@@ -22,12 +23,23 @@ const SingleReviewCard = () => {
                 />
                 <div class="card__header-text">
                   <h3 class="card__title">Jessica Parker</h3>
-                  <span class="card__status">1 hour ago</span>
+                  <div className="rating rating-xs">
+                      <Ratting />
+                      <Ratting />
+                      <Ratting />
+                      <Ratting />
+                      <input
+                        type="radio"
+                        name="rating-5"
+                        className="mask mask-star-2 bg-orange-400"
+                        checked
+                      />
+
+                    </div>
                 </div>
               </div>
               <p class="card__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores, blanditiis?
+                Everything is good and sold item
               </p>
             </div>
           </Link>

@@ -19,7 +19,6 @@ const Home = () => {
             <BrandSlider/>
             <Business/>
             <Review/>
-            <Spinner/>
         </div>
     );
 };

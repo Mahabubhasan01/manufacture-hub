@@ -7,6 +7,7 @@ import auth from "../../../../firebase.init";
 import "./Navbar.css";
 import Profile from "./Profile/Profile";
 import logo from './logo.png'
+import {  toast } from 'react-toastify';
 
 const Navbar = ({ children }) => {
   const [darkMood, setDarkMode] = useState();
@@ -37,7 +38,7 @@ const Navbar = ({ children }) => {
           <li>
         <Link to="/login">Login</Link>
       </li>:
-          <li onClick={()=>signOut(auth)}>
+          <li onClick={()=>{{signOut(auth)}toast('Successfully logout')}}>
         <Link to="/">Logout</Link>
       </li>}
     </>

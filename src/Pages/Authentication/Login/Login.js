@@ -10,15 +10,18 @@ import LoginCard from "./LoginCard/LoginCard";
 import SocialAuth from "./SocialAuth";
 import useToken from '../../Hooks/useToken'
 import { useNavigate } from "react-router-dom";
+import Spinner from "../../Shared/Spiner/Spinner";
 
 const Login = () => {
+  
   const navigate = useNavigate()
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-    const [token] = useToken(user)
-  /* if(token){
+    const [token] = useToken(user);
+  if(token){
     navigate('/')
-  } */
+  }
+
   // react hook form
   const {
     register,
@@ -31,6 +34,9 @@ const Login = () => {
     console.log(data);
     event.target.reset();
   };
+  if(loading){
+    return <Spinner/>
+  }
   return (
     <div className="body">
       <div class="main">
@@ -45,17 +51,18 @@ const Login = () => {
             <input
               {...register("name")}
               type="text"
-              name="txt"
+              name="name"
               placeholder="User name"
               required=""
             />
-            {errors.name?.type === "required" && (
+            {/* {errors.name?.type === "required" && (
               <span className="label-text-alt text-red-500">
                 {errors.name.message}{" "}
               </span>
-            )}
+            )} */}
             <input
-              {...register("email", {
+              {...register("email",
+              /*  {
                 required: {
                   value: true,
                   message: "Email is required",
@@ -64,14 +71,16 @@ const Login = () => {
                   value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
                   message: "Enter valid email here",
                 },
-              })}
+              } */
+              )}
               type="email"
               name="email"
               placeholder="Email"
               required=""
             />
             <input
-              {...register("password", {
+              {...register("password", 
+              /* {
                 required: {
                   value: true,
                   message: "Password is must required",
@@ -80,9 +89,10 @@ const Login = () => {
                   value: /[a-zA-Z0-9]{8}/,
                   message: "Must be 8 letter or number",
                 },
-              })}
+              } */
+              )}
               type="password"
-              name="pswd"
+              name="password"
               placeholder="Password"
               required=""
             />

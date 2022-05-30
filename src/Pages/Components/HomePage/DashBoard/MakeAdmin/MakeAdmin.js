@@ -1,6 +1,9 @@
 import React from "react";
+import useAdmin from "../../../../Hooks/useAdmin";
+import Admin from "./Admin";
 
 const MakeAdmin = () => {
+  const [admin] = useAdmin()
   return (
     <div>
       <div class="overflow-x-auto w-full">
@@ -19,6 +22,9 @@ const MakeAdmin = () => {
             </tr>
           </thead>
           <tbody>
+            {
+              admin.map(adm=><Admin key={adm._id} adm={adm}/>)
+            }
             <tr>
               <th>
                 <label>

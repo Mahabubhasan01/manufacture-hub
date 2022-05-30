@@ -1,10 +1,10 @@
 import React from 'react';
-import ReviewCard from './ReviewCard/ReviewCard';
+import ReviewCardDynamic from './ReviewCard/ReviewCardADynamic';
 
 const Review = () => {
     return (
         <div >
-            <ReviewCard/>
+            <ReviewCardDynamic/>
         </div>
     );
 };

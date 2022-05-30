@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 import Spinner from "../../../../Shared/Spiner/Spinner";
-import allOrders from "./allOrders";
+import AllOrders from "./AllOrders";
 
 const ManageAllOrder = () => {
   const url = `http://localhost:5000/order`;
@@ -37,9 +37,9 @@ const ManageAllOrder = () => {
             </thead>
             <tbody>
              {
-               orders.map(order=><allOrders
+               orders.map(order=><AllOrders
                order={order}
-                 key={order._id} ></allOrders>)
+                 key={order._id} />)
              }
 
               <tr>

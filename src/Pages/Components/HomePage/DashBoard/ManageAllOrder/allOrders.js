@@ -1,6 +1,6 @@
 import React from "react";
 
-const allOrders = ({order}) => {
+const AllOrders = ({order}) => {
   const {name,email,img,price,quantity,unpaid} = order
   return (
     <tr>
@@ -40,4 +40,4 @@ const allOrders = ({order}) => {
   );
 };
 
-export default allOrders;
+export default AllOrders;

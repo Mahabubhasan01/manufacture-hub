@@ -2,16 +2,18 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../../../firebase.init";
-import useReview from "../../../../Hooks/useReview";
 import Ratting from "../../../../Shared/Ratting";
 import "./ReviewCard.css";
 import SingleReviewCard from "./SingleReviewCard";
 
-const ReviewCard = () => {
+const ReviewCardDynamic = (
+ /*  {review} */
+  ) => {
+  /* const {name,rate,info,img} = review
   const [user] = useAuthState(auth);
   const email = user?.email;
   const [review] = useReview(email);
-  console.log(review);
+  console.log(review); */
   return (
     <div className="review md:my-32">
       <h1 className="font-bold text-4xl text-center">Review Satisfaction</h1>
@@ -199,4 +201,4 @@ const ReviewCard = () => {
   );
 };
 
-export default ReviewCard;
+export default ReviewCardDynamic;

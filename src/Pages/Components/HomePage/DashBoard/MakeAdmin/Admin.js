@@ -2,7 +2,7 @@ import React from 'react';
 
 const Admin = ({adm}) => {
     console.log(adm);
-    const {email,role} = adm
+    const {email,role,name} = adm
     return (
         <tr>
         <th>
@@ -19,19 +19,16 @@ const Admin = ({adm}) => {
               </div>
             </div>
             <div>
-              <div class="font-bold">{email}</div>
-              <div class="text-sm opacity-50">United States</div>
+              <div class="font-bold">{name}</div>
+              
             </div>
           </div>
         </td>
         <td>
          {email}
-          <br />
-          <span class="badge badge-ghost badge-sm">
-            Desktop Support Technician
-          </span>
+       
         </td>
-        <td>Purple</td>
+        <td>{role}</td>
         <th>
           <button class="btn btn-ghost btn-xs">Make Admin</button>
         </th>

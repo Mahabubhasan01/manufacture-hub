@@ -15,7 +15,7 @@ const SocialAuth = () => {
   if(GLoading||FLoading||GitLoading||TLoading){
     return <Spinner/>
   }
-  if(token){
+  if(GUser){
     navigate('/')
   }
     return (

@@ -1,9 +1,11 @@
 import React from "react";
 import useAdmin from "../../../../Hooks/useAdmin";
+import useUser from "../../../../Hooks/useUser";
 import Admin from "./Admin";
 
 const MakeAdmin = () => {
-  const [admin] = useAdmin()
+const [users] = useUser
+()
   return (
     <div>
       <div class="overflow-x-auto w-full">
@@ -23,9 +25,9 @@ const MakeAdmin = () => {
           </thead>
           <tbody>
             {
-              admin.map(adm=><Admin key={adm._id} adm={adm}/>)
+              users.map(adm=><Admin key={adm._id} adm={adm}/>)
             }
-            <tr>
+            {/* <tr>
               <th>
                 <label>
                   <input type="checkbox" class="checkbox" />
@@ -160,7 +162,7 @@ const MakeAdmin = () => {
               <th>
                 <button class="btn btn-ghost btn-xs">Make Admin</button>
               </th>
-            </tr>
+            </tr> */}
           </tbody>
 
           <tfoot>

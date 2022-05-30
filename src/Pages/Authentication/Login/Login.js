@@ -26,12 +26,12 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const onSubmit =  (data, event) => {
-     createUserWithEmailAndPassword(data.email, data.password);
+     createUserWithEmailAndPassword(data.email, data.password,data.name);
     console.log(data);
-    /* event.target.reset(); */
+    event.target.reset();
   };
 
-  if (token) {
+  if (user) {
     navigate("/");
   }
   if (loading) {

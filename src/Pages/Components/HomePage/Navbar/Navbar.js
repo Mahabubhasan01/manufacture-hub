@@ -8,10 +8,13 @@ import "./Navbar.css";
 import Profile from "./Profile/Profile";
 import logo from "./logo.png";
 import { toast } from "react-toastify";
+import useAdmin from "../../../Hooks/useAdmin";
 
 const Navbar = ({ children }) => {
   const [darkMood, setDarkMode] = useState();
   const [user, loading] = useAuthState(auth);
+  const email = user?.email
+  const [admin] = useAdmin(email)
 
   const item = (
     <>
@@ -35,7 +38,7 @@ const Navbar = ({ children }) => {
       <li>
         <Link to="/">Contact</Link>
       </li>
-      {user?<li>
+      {user||admin.role?<li>
         <Link to="/dashboard">DashBoard</Link>
       </li>:''}
       {!user ? (

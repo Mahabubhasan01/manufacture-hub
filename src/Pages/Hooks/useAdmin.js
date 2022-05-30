@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 
-const useAdmin =()=>{
+const useAdmin =(email)=>{
     const [admin,setAdmin] = useState([]);
     useEffect(()=>{
-        const url = ``
+        const url = `http://localhost:5000/user/${email}`
         fetch(url).then(res=>res.json()).then(data=>setAdmin(data))
     },[]);
     return [admin]

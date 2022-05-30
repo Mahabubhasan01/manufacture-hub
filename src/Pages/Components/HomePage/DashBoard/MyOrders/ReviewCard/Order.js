@@ -29,7 +29,7 @@ const Order = ({ order }) => {
           <span class="font-bold text-xl">{name}</span>
           {/* <span class="text-red-500 text-xs">Apple</span> */}
 
-          <label for="my-modal-6" class="btn btn-error btn-outline btn-sm w-20 modal-button">
+          <label for="order" class="btn btn-error btn-outline btn-sm w-20 modal-button">
             <Link
               to="#"
               class="font-semibold hover:text-black text-primary  text-xs"
@@ -38,7 +38,7 @@ const Order = ({ order }) => {
             </Link>
           </label>
 
-          <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+          <input type="checkbox" id="order" class="modal-toggle" />
           <div class="modal modal-bottom sm:modal-middle">
             <div class="modal-box">
               <h3 class="font-bold text-lg">
@@ -48,7 +48,7 @@ const Order = ({ order }) => {
                Are you sure want to remove this item <span className="font-bold text-xl">{name}</span>
               </p>
               <div class="modal-action">
-                <label onClick={()=>deleteItem(`${_id}`)} for="my-modal-6" class="btn bg-success">
+                <label onClick={()=>deleteItem(`${_id}`)} for="order" class="btn bg-success">
                   Yes!
                 </label>
               </div>
@@ -80,6 +80,7 @@ const Order = ({ order }) => {
       </div>
       <span class="text-center w-1/5 font-semibold text-sm">{price}</span>
       <span class="text-center w-1/5 font-semibold text-sm">{totalA}</span>
+      
     </div>
   );
 };

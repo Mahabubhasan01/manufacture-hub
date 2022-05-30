@@ -8,6 +8,7 @@ const DashBoard = () => {
   const [user] = useAuthState(auth);
   const email = user?.email
   const [admin] = useAdmin(email)
+  
   const admina = true
   return (
     <div>
@@ -34,25 +35,25 @@ const DashBoard = () => {
             >
               ✕
             </label>
-            { user?<li>
+            { user||admin.map(r=>r.role)?<li>
               <Link to="/dashboard/myprofile">My Profile</Link>
             </li>:''}
             {user?<li>
               <Link to="/dashboard/myorders">My Orders</Link>
             </li>:''}
-            {user?<li>
+            {user&&!admin.map(r=>r.role)?<li>
               <Link to="/dashboard/addreview">Add a Review</Link>
             </li>:''}
-           {admin.role? <li>
+           {admin.map(r=>r.role)? <li>
               <Link to="/dashboard/addproduct">Add a New Product</Link>
             </li>:''}
-            {admin.role?<li>
+            {admin.map(r=>r.role)?<li>
               <Link to="/dashboard/manageproducts">Manage Products</Link>
             </li>:''}
-            {admin.role?<li>
+            {admin.map(r=>r.role)?<li>
               <Link to="/dashboard/manageallorder">Manage All Order</Link>
             </li>:''}
-            {admin.role?<li>
+            {admin.map(r=>r.role)?<li>
               <Link to="/dashboard/makeadmin">Make an Admin</Link>
             </li>:''}
           </ul>

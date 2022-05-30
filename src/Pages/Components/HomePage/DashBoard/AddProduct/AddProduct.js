@@ -1,10 +1,39 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const AddProduct = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data,event) =>{ 
+   
+    const parts ={
+      name:data.name,
+      img:data.img,
+      price:data.price,
+      quantity:data.quantity,
+      info:data.info,
+    }
+    const url = 'http://localhost:5000/parts';
+    fetch(url,{
+      method:'POST',
+      headers:{
+        'content-type':'application/json'
+      },
+      body:JSON.stringify(parts)
+    }).then(res=>res.json()).then(data=>{
+      console.log('success',data);
+      toast.success('Successfully add new product',data.name)
+      event.target.reset()
+    })
+    console.log(data);}
   return (
     <div>
       <div className="mt-5 md:mt-0 md:col-span-2">
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="shadow sm:rounded-md sm:overflow-hidden">
             <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
               <div className="grid grid-cols-3 gap-6">
@@ -18,7 +47,8 @@ const AddProduct = () => {
                   <div className="mt-1 flex rounded-md shadow-sm">
                     <input
                       type="text"
-                      name="company-website"
+                      {...register('name')}
+                      name="name"
                       id="company-website"
                       className="bg-base-100 flex-1 block w-full rounded-md sm:text-sm "
                       placeholder="type here"
@@ -35,6 +65,8 @@ const AddProduct = () => {
                 </label>
                 <input
                   type="text"
+                  {...register('price')}
+                  name="price"
                   placeholder="Type here"
                   class="input input-bordered w-full max-w-xs"
                 />
@@ -48,7 +80,9 @@ const AddProduct = () => {
                   Product Quantity
                 </label>
                 <input
+                {...register('quantity')}
                   type="number"
+                  name="quantity"
                   placeholder="Type here"
                   class="input input-bordered w-full max-w-xs"
                 />
@@ -64,16 +98,14 @@ const AddProduct = () => {
                 <div className="mt-1">
                   <textarea
                     id="about"
-                    name="about"
+                    name="info"
                     rows={5}
                     className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                     placeholder="you@example.com"
                     defaultValue={""}
                   />
                 </div>
-                <p className="mt-2 text-sm text-gray-500">
-                  Brief description for your profile. URLs are hyperlinked.
-                </p>
+                
               </div>
 
               {<div>
@@ -91,6 +123,7 @@ const AddProduct = () => {
                     </svg>
                   </span>
                   <input
+                  {...register('img')}
                   type="text"
                   placeholder="Photo url......."
                   class="input input-bordered w-full max-w-xs"

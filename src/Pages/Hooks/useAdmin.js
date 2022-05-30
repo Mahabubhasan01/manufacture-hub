@@ -5,7 +5,7 @@ const useAdmin =(email)=>{
     useEffect(()=>{
         const url = `http://localhost:5000/user/${email}`
         fetch(url).then(res=>res.json()).then(data=>setAdmin(data))
-    },[]);
+    },[email]);
     return [admin]
 };
 export default useAdmin;

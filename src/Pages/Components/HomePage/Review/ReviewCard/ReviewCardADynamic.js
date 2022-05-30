@@ -9,11 +9,11 @@ import SingleReviewCard from "./SingleReviewCard";
 const ReviewCardDynamic = (
  /*  {review} */
   ) => {
-  /* const {name,rate,info,img} = review
+ /*  const {name,rate,info,img} = review
   const [user] = useAuthState(auth);
   const email = user?.email;
-  const [review] = useReview(email);
-  console.log(review); */
+  const [review] = useReview(email); */
+  // console.log(review);
   return (
     <div className="review md:my-32">
       <h1 className="font-bold text-4xl text-center">Review Satisfaction</h1>

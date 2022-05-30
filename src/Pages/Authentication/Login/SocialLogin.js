@@ -16,7 +16,7 @@ const SocialLogin = () => {
   if(GLoading||FLoading||GitLoading||TLoading){
     return <Spinner/>
   }
-  if(token){
+  if(token||GUser){
     navigate('/')
   }
   return (

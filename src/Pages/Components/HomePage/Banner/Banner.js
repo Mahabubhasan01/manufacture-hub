@@ -9,18 +9,18 @@ const Banner = () => {
         <div class="bannerFondo shadow-2xl bg-primary h-full bg-left-top bg-auto bg-repeat-x rounded-b-xl">
           <div className="md:flex justify-center items-center">
             <div className="md:p-20 lg:p-20  ">
-              <h1 className="text-5xl text-white font-bold">
+              <h1 className="text-5xl text-white font-bold px-3">
                 <span className="text-success">Car</span>{" "}
                 <span className="text-success">Pa</span>rts{" "}
                 <span className="text-success">Ex</span>change provide are
               </h1>
-              <p className="text-white w-2/3 my-5 text-xl">
+              <p className="text-white w-2/3 my-5 text-xl px-3">
                 {" "}
                 among the world's largest suppliers of car parts, exporting
                 motor vehicle parts and accessories worth $34.8 billion in 2018,
                 according to the UN's Comtrade database
               </p>
-              <ul className="mx-auto">
+              <ul className="mx-auto px-3">
                 <ol className="flex my-5 text-white text-xl items-center">
                   <Icons />
                   Shopping Cart Wheels & Casters

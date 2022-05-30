@@ -43,7 +43,7 @@ const Login = () => {
     );
   }
   return (
-    <div className="body">
+    <div className="body my-10">
       <div class="main">
         <input type="checkbox" id="chk" aria-hidden="true" />
 

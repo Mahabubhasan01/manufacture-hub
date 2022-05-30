@@ -35,7 +35,7 @@ const PartsDetails = () => {
       phone: data.phone,
       address: data.address,
     };
-    const url = "http://localhost:5000/order";
+    const url = "https://morning-plains-92955.herokuapp.com/order";
     fetch(url, {
       method: "POST",
       headers: {

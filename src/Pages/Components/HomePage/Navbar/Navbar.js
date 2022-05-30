@@ -90,7 +90,8 @@ const Navbar = ({ children }) => {
           </ul>
         </div>
         <Link to="/" className={darkMood ? "" : "text-black"}>
-          <img className="m-0 p-0" src={logo} alt="" />
+          {/* <img className="m-0 p-0" src={logo} alt="" /> */}
+          <h1 className="font-bold  text-3xl mx-3 text-success font-serif"><span>Car</span>PaEx</h1>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex bg-primary">

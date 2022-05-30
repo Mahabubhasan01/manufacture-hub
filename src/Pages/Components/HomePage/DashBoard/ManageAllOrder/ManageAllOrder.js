@@ -4,19 +4,26 @@ import Spinner from "../../../../Shared/Spiner/Spinner";
 import AllOrders from "./AllOrders";
 
 const ManageAllOrder = () => {
-  const url = `http://localhost:5000/order`;
-  const { data: orders,isLoading,refetch,} = useQuery("product", () => fetch(url,
-    /*  {
+  const url = `https://morning-plains-92955.herokuapp.com/order`;
+  const {
+    data: orders,
+    isLoading,
+    refetch,
+  } = useQuery("product", () =>
+    fetch(
+      url
+      /*  {
     method: "GET",
     headers: {
       authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   } */
-  ).then((res) => res.json()));
-  if(isLoading){
-    return <Spinner/>
+    ).then((res) => res.json())
+  );
+  if (isLoading) {
+    return <Spinner />;
   }
-  console.log(orders)
+  console.log(orders);
   return (
     <div>
       <div>
@@ -36,11 +43,9 @@ const ManageAllOrder = () => {
               </tr>
             </thead>
             <tbody>
-             {
-               orders.map(order=><AllOrders
-               order={order}
-                 key={order._id} />)
-             }
+              {orders.map((order) => (
+                <AllOrders order={order} key={order._id} />
+              ))}
 
               <tr>
                 <th>

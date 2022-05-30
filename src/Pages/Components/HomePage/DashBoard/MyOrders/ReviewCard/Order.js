@@ -2,22 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Order = ({ order }) => {
-  const { name, img, price, quantity,_id,total } = order;
-  const totalA = parseFloat(total*quantity)
-  const deleteItem = id =>{
-    const url  =  `http://localhost:5000/order/${id}`;
-    fetch(url,{
-      method:'DELETE',
-      headers:{
-        'content-type':'application/json'
+  const { name, img, price, quantity, _id, total } = order;
+  const totalA = parseFloat(total * quantity);
+  const deleteItem = (id) => {
+    const url = `https://morning-plains-92955.herokuapp.com/order/${id}`;
+    fetch(url, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
       },
-      body:JSON.stringify()
-    }).then(res=>res.json()).then(data=>{
-     console.log(data)
+      body: JSON.stringify(),
     })
-  }
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
 
-  
   return (
     <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
       <div class="flex w-2/5">
@@ -29,7 +30,10 @@ const Order = ({ order }) => {
           <span class="font-bold text-xl">{name}</span>
           {/* <span class="text-red-500 text-xs">Apple</span> */}
 
-          <label for="order" class="btn btn-error btn-outline btn-sm w-20 modal-button">
+          <label
+            for="order"
+            class="btn btn-error btn-outline btn-sm w-20 modal-button"
+          >
             <Link
               to="#"
               class="font-semibold hover:text-black text-primary  text-xs"
@@ -45,10 +49,15 @@ const Order = ({ order }) => {
                 You are remove item from this list
               </h3>
               <p class="py-4">
-               Are you sure want to remove this item <span className="font-bold text-xl">{name}</span>
+                Are you sure want to remove this item{" "}
+                <span className="font-bold text-xl">{name}</span>
               </p>
               <div class="modal-action">
-                <label onClick={()=>deleteItem(`${_id}`)} for="order" class="btn bg-success">
+                <label
+                  onClick={() => deleteItem(`${_id}`)}
+                  for="order"
+                  class="btn bg-success"
+                >
                   Yes!
                 </label>
               </div>
@@ -80,7 +89,6 @@ const Order = ({ order }) => {
       </div>
       <span class="text-center w-1/5 font-semibold text-sm">{price}</span>
       <span class="text-center w-1/5 font-semibold text-sm">{totalA}</span>
-      
     </div>
   );
 };

@@ -12,11 +12,7 @@ const [users] = useUser
         <table class="table w-full">
           <thead>
             <tr>
-              <th>
-                <label>
-                  <input type="checkbox" class="checkbox" />
-                </label>
-              </th>
+              
               <th>Name</th>
               <th>Email</th>
               <th>Access Area</th>

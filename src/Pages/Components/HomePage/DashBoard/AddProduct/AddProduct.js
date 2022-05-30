@@ -8,28 +8,30 @@ const AddProduct = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data,event) =>{ 
-   
-    const parts ={
-      name:data.name,
-      img:data.img,
-      price:data.price,
-      quantity:data.quantity,
-      info:data.info,
-    }
-    const url = 'http://localhost:5000/parts';
-    fetch(url,{
-      method:'POST',
-      headers:{
-        'content-type':'application/json'
+  const onSubmit = (data, event) => {
+    const parts = {
+      name: data.name,
+      img: data.img,
+      price: data.price,
+      quantity: data.quantity,
+      info: data.info,
+    };
+    const url = "https://morning-plains-92955.herokuapp.com/parts";
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
       },
-      body:JSON.stringify(parts)
-    }).then(res=>res.json()).then(data=>{
-      console.log('success',data);
-      toast.success('Successfully add new product',data.name)
-      event.target.reset()
+      body: JSON.stringify(parts),
     })
-    console.log(data);}
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("success", data);
+        toast.success("Successfully add new product", data.name);
+        event.target.reset();
+      });
+    console.log(data);
+  };
   return (
     <div>
       <div className="mt-5 md:mt-0 md:col-span-2">
@@ -47,7 +49,7 @@ const AddProduct = () => {
                   <div className="mt-1 flex rounded-md shadow-sm">
                     <input
                       type="text"
-                      {...register('name')}
+                      {...register("name")}
                       name="name"
                       id="company-website"
                       className="bg-base-100 flex-1 block w-full rounded-md sm:text-sm "
@@ -65,12 +67,11 @@ const AddProduct = () => {
                 </label>
                 <input
                   type="text"
-                  {...register('price')}
+                  {...register("price")}
                   name="price"
                   placeholder="Type here"
                   class="input input-bordered w-full max-w-xs"
                 />
-                
               </div>
               <div class="form-control w-full max-w-xs">
                 <label
@@ -80,13 +81,12 @@ const AddProduct = () => {
                   Product Quantity
                 </label>
                 <input
-                {...register('quantity')}
+                  {...register("quantity")}
                   type="number"
                   name="quantity"
                   placeholder="Type here"
                   class="input input-bordered w-full max-w-xs"
                 />
-                
               </div>
               <div>
                 <label
@@ -105,31 +105,32 @@ const AddProduct = () => {
                     defaultValue={""}
                   />
                 </div>
-                
               </div>
 
-              {<div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Upload via Photo <span className="text-info">link</span>
-                </label>
-                <div className="mt-1 flex items-center">
-                  <span className="inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100">
-                    <svg
-                      className="h-full w-full text-gray-300"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                  </span>
-                  <input
-                  {...register('img')}
-                  type="text"
-                  placeholder="Photo url......."
-                  class="input input-bordered w-full max-w-xs"
-                />
+              {
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Upload via Photo <span className="text-info">link</span>
+                  </label>
+                  <div className="mt-1 flex items-center">
+                    <span className="inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100">
+                      <svg
+                        className="h-full w-full text-gray-300"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                      </svg>
+                    </span>
+                    <input
+                      {...register("img")}
+                      type="text"
+                      placeholder="Photo url......."
+                      class="input input-bordered w-full max-w-xs"
+                    />
+                  </div>
                 </div>
-              </div>}
+              }
 
               <div>
                 <label className="block text-sm font-medium text-gray-700">

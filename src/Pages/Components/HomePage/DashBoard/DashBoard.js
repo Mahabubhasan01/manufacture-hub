@@ -35,13 +35,13 @@ const DashBoard = () => {
             >
               ✕
             </label>
-            { user||admin.map(r=>r.role)?<li>
+            { user?<li>
               <Link to="/dashboard/myprofile">My Profile</Link>
             </li>:''}
             {user?<li>
               <Link to="/dashboard/myorders">My Orders</Link>
             </li>:''}
-            {user&&!admin.map(r=>r.role)?<li>
+            {user?<li>
               <Link to="/dashboard/addreview">Add a Review</Link>
             </li>:''}
            {admin.map(r=>r.role)? <li>

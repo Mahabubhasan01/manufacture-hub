@@ -56,10 +56,8 @@ const Footer = () => {
 
         <div class="mb-6">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-            distinctio earum repellat quaerat voluptatibus placeat nam, commodi
-            optio pariatur est quia magnam eum harum corrupti dicta, aliquam
-            sequi voluptate quas.
+          Carpaex is the most valuable car company in 2021 with 59.47 billion USD as it finished ahead of Mercedes-Benz, Volkswagen and BMW. Toyota has become the most valuable automobile brand in the world in 2021 by overtaking the luxury carmaker Mercedes-Benz.Mar 26, 2021
+
           </p>
         </div>
 

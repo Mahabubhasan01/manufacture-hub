@@ -9,9 +9,9 @@ import Order from "./ReviewCard/Order";
 
 const MyOrders = () => {
   const [user] = useAuthState(auth);
-  const email = user?.email
+  const email = user?.email;
   const navigate = useNavigate();
-  const url = `http://localhost:5000/order/${email}`;
+  const url = `https://morning-plains-92955.herokuapp.com/order/${email}`;
   const {
     data: orders,
     isLoading,
@@ -26,13 +26,13 @@ const MyOrders = () => {
   },
 } */
     ).then((res) => res.json())
-    
-  );refetch()
-  console.log(orders)
+  );
+  refetch();
+  console.log(orders);
   if (isLoading) {
     return <Spinner />;
   }
-  
+
   return (
     <div>
       <div class="bg-gray-100">
@@ -57,9 +57,9 @@ const MyOrders = () => {
                   Total
                 </h3>
               </div>
-              {
-                orders.map(order=><Order key={order._id} order={order}/>)
-              }
+              {orders.map((order) => (
+                <Order key={order._id} order={order} />
+              ))}
 
               <Link
                 to="/"
@@ -75,7 +75,7 @@ const MyOrders = () => {
               </Link>
             </div>
 
-           <PaymentMethod/>
+            <PaymentMethod />
           </div>
         </div>
       </div>

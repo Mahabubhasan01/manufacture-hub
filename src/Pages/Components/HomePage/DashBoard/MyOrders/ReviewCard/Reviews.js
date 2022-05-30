@@ -1,14 +1,14 @@
-import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useQuery } from 'react-query';
-import auth from '../../../../../../firebase.init';
-import Spinner from '../../../../../Shared/Spiner/Spinner';
-import ReviewCardDynamic from '../../../Review/ReviewCard/ReviewCardADynamic';
+import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useQuery } from "react-query";
+import auth from "../../../../../../firebase.init";
+import Spinner from "../../../../../Shared/Spiner/Spinner";
+import ReviewCardDynamic from "../../../Review/ReviewCard/ReviewCardADynamic";
 
 const Reviews = () => {
-    const [user] = useAuthState(auth)
-    const email = user?.email
-  const url = `http://localhost:5000/review/${email}`;
+  const [user] = useAuthState(auth);
+  const email = user?.email;
+  const url = `https://morning-plains-92955.herokuapp.com/review/${email}`;
   const {
     data: reviews,
     isLoading,
@@ -23,20 +23,19 @@ const Reviews = () => {
   },
 } */
     ).then((res) => res.json())
-    
   );
-  refetch()
-  console.log(reviews)
+  refetch();
+  console.log(reviews);
   if (isLoading) {
     return <Spinner />;
   }
-    return (
-        <div>
-            {/* {
+  return (
+    <div>
+      {/* {
                 reviews.map(review=><ReviewCardDynamic key={review._id} review={review}/>)
             } */}
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Reviews;

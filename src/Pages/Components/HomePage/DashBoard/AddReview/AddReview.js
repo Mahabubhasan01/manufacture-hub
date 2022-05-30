@@ -4,36 +4,39 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../../../firebase.init";
 import { toast } from "react-toastify";
 const AddReview = () => {
-  const [user] = useAuthState(auth)
-    console.log(user)
+  const [user] = useAuthState(auth);
+  console.log(user);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data,event) =>{ 
-    const img=user?.photoURL;
-    const email = user?.email
-    const review ={
-      name:data.name,
-      email:email,
-      rate:data.ratting,
-      info:data.feedback,
-      img:img
-    }
-    const url = 'http://localhost:5000/review';
-    fetch(url,{
-      method:'POST',
-      headers:{
-        'content-type':'application/json'
+  const onSubmit = (data, event) => {
+    const img = user?.photoURL;
+    const email = user?.email;
+    const review = {
+      name: data.name,
+      email: email,
+      rate: data.ratting,
+      info: data.feedback,
+      img: img,
+    };
+    const url = "https://morning-plains-92955.herokuapp.com/review";
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
       },
-      body:JSON.stringify(review)
-    }).then(res=>res.json()).then(data=>{
-      console.log('success',data);
-      toast.success('Thanks for your feedback')
-      event.target.reset()
+      body: JSON.stringify(review),
     })
-    console.log(data);}
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("success", data);
+        toast.success("Thanks for your feedback");
+        event.target.reset();
+      });
+    console.log(data);
+  };
   return (
     <div>
       <div class="card w-96 bg-base-100 shadow-xl mx-auto">
@@ -50,13 +53,14 @@ const AddReview = () => {
             <label className="font-bold text-xl">Rate Your Feedback</label>
             <input
               class="input input-bordered input-primary w-full max-w-xs bg-slate-300 "
-              {...register("ratting",{ min: 1, max: 5 }, { required: true })}
+              {...register("ratting", { min: 1, max: 5 }, { required: true })}
             />
             {errors.exampleRequired && <span>This field is required</span>}
             <h2 class="text-xl font-bold text-primary mb-3">
               Product Feedback
             </h2>{" "}
-            <textarea {...register('feedback')}
+            <textarea
+              {...register("feedback")}
               className="w-full max-w-xs"
               name="feedback"
               id=""
